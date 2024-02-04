@@ -7,17 +7,6 @@
 #tasks:
  # - init: ./mvnw install -DskipTests=false
 
-# image: gitpod/workspace-full
-
-# tasks:
-#   - init: ./mvnw clean install -U -DskipTests
-#     command: ./mvnw spring-boot:run
-#     name: Run BookStore app
-
-# ports:
-#   - port: 8080
-#     onOpen: open-preview
-
 image: gitpod/workspace-full:latest
 
 # Initialize tasks
@@ -25,15 +14,6 @@ tasks:
   # Run Maven clean install
   - init: echo "Running Maven clean install..."
     command: mvn clean install
-
-  # Initialize the MySQL database (customize as needed)
-  - init: echo "Initializing MySQL database..."
-    command: ./init-db.sh
-
-# Expose MySQL on port 3306 for local development
-# services:
-#   - name: mysql
-#     port: 3306
 
 # Expose port 8080 for your Java application (customize as needed)
 ports:
